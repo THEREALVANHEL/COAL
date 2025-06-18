@@ -13,10 +13,11 @@ RUN wget https://github.com/mongodb/mongo-c-driver/releases/download/1.24.4/mong
     cmake --build . --target install && \
     cd ../.. && rm -rf mongo-c-driver-1.24.4*
 
-# Install MongoDB C++ driver
+# Install MongoDB C++ driver (FIXED)
 RUN wget https://github.com/mongodb/mongo-cxx-driver/releases/download/r3.9.0/mongo-cxx-driver-r3.9.0.tar.gz && \
     tar -xzf mongo-cxx-driver-r3.9.0.tar.gz && \
-    cd mongo-cxx-driver-r3.9.0/build && \
+    cd mongo-cxx-driver-r3.9.0 && \
+    mkdir -p build && cd build && \
     cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_PREFIX_PATH=/usr/local && \
     cmake --build . --target install && \
     cd ../.. && rm -rf mongo-cxx-driver-r3.9.0*
