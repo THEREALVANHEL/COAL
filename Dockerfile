@@ -8,7 +8,7 @@ RUN apt-get update && \
 RUN wget https://github.com/mongodb/mongo-c-driver/releases/download/1.24.4/mongo-c-driver-1.24.4.tar.gz && \
     tar -xzf mongo-c-driver-1.24.4.tar.gz && \
     cd mongo-c-driver-1.24.4 && \
-    mkdir build && cd build && \
+    mkdir -p build && cd build && \
     cmake .. -DENABLE_AUTOMATIC_INIT_AND_CLEANUP=OFF && \
     cmake --build . --target install && \
     cd ../.. && rm -rf mongo-c-driver-1.24.4*
