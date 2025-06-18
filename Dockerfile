@@ -2,7 +2,7 @@ FROM ubuntu:22.04
 
 # Install dependencies
 RUN apt-get update && \
-    apt-get install -y build-essential cmake git libssl-dev libsasl2-dev wget pkg-config
+    apt-get install -y build-essential cmake git libssl-dev libsasl2-dev wget pkg-config python3 python3-pip
 
 # Install MongoDB C driver
 RUN wget https://github.com/mongodb/mongo-c-driver/releases/download/1.24.4/mongo-c-driver-1.24.4.tar.gz && \
